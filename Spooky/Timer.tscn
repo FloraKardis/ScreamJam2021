@@ -23,7 +23,7 @@ animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "default",
-"speed": 3.0
+"speed": 2.0
 } ]
 
 [node name="Timer" type="Node2D"]
@@ -36,5 +36,6 @@ playing = true
 
 [node name="Pointer" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
-frame = 1
+frame = 2
+speed_scale = 1.1
 playing = true

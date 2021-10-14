@@ -21,5 +21,9 @@ func start(seconds):
 func _process(delta):
 	if counting:
 		time_passed += delta
+		if time_passed >= time_full:
+			time_passed = time_full
+			counting = false
 		$Pointer.position.x = POSITION_START - BAR_LENGTH * (time_passed / time_full)
+		
 
