@@ -9,6 +9,7 @@
 script = ExtResource( 3 )
 
 [node name="Ghost" parent="." instance=ExtResource( 1 )]
+z_index = 1
 
 [node name="Timer" parent="." instance=ExtResource( 2 )]
 position = Vector2( 750, 720 )

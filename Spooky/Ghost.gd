@@ -15,7 +15,7 @@ func _process(delta):
 		if to_spook.empty():
 			move(get_global_mouse_position(), delta)
 		else:
-			move(to_spook[0].get_global_position(), delta)
+			move(to_spook[0].find_node("Shape").get_global_position(), delta)
 	
 
 func move(position: Vector2, delta):

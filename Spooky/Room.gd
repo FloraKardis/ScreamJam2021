@@ -17,5 +17,7 @@ func _on_mouse_exited():
 func interact(object):
 	if object == null:
 		pass
-	if object ==  $Lamp:
+	if object == $Lamp:
 		$AnimationPlayer.play("lamp blinking")
+	if object == $Wardrobe:
+		$AnimationPlayer.play("wardrobe spooking")
