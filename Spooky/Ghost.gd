@@ -3,30 +3,37 @@ extends Node2D
 class_name Ghost
 
 const SPEED = 300
-const MIN_DISTANCE_FROM_OBJECT = 250
+const MIN_DISTANCE_FROM_OBJECT = 100
+const REST = 0.5
 
 var to_spook = []
 var spooking = false
+var caught_on = REST + 1
 
 func _process(delta):
+	caught_on += delta
 	if spooking:
 		pass
 	else:
 		if to_spook.empty():
-			move(get_global_mouse_position(), delta)
+			if caught_on > REST:
+				move(get_global_mouse_position(), delta)
 		else:
 			move(to_spook[0].find_node("Shape").get_global_position(), delta)
-	
 
 func move(position: Vector2, delta):
 	var direction = position - self.position
 	$AnimatedSprite.flip_h = (direction.x > 0)
 	if direction.length() > MIN_DISTANCE_FROM_OBJECT:
+		$AnimatedSprite.play("moving")
 		self.position += direction.normalized() * SPEED * delta
-	elif not to_spook.empty():
-		$AnimatedSprite.play("spooking")
-		spooking = true
-
+	else:
+		if to_spook.empty():
+			$AnimatedSprite.play("idle")
+			caught_on = 0
+		else:
+			$AnimatedSprite.play("spooking")
+			spooking = true
 
 func _animation_finished():
 	if $AnimatedSprite.animation == "spooking":

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/froggo.png-bb2c72b31b8820b059ed0db7d3edd7fe.stex"
+path="res://.import/idle2.png-c6403d880837612d6d6a8b442ce1a9c9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/room/froggo.png"
-dest_files=[ "res://.import/froggo.png-bb2c72b31b8820b059ed0db7d3edd7fe.stex" ]
+source_file="res://art/ghost/idle/version1/idle2.png"
+dest_files=[ "res://.import/idle2.png-c6403d880837612d6d6a8b442ce1a9c9.stex" ]
 
 [params]
 

@@ -1,6 +1,7 @@
 extends Node2D
 
 var currently_selected = null
+var stress_level 
 
 func current_object():
 	if currently_selected != null:
@@ -18,6 +19,9 @@ func interact(object):
 	if object == null:
 		pass
 	if object == $Lamp:
-		$AnimationPlayer.play("lamp blinking")
+		$SpookPlayer.play("lamp blinking")
 	if object == $Wardrobe:
-		$AnimationPlayer.play("wardrobe spooking")
+		$SpookPlayer.play("wardrobe spooking")
+	if object == $Picture:
+		$SpookPlayer.play("picture kiss")
+
