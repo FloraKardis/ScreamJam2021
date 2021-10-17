@@ -307,7 +307,6 @@ material = SubResource( 5 )
 position = Vector2( -750, -88 )
 z_index = 3
 frames = SubResource( 6 )
-frame = 1
 playing = true
 centered = false
 
@@ -368,6 +367,7 @@ position = Vector2( 1000, 229 )
 shape = SubResource( 16 )
 
 [node name="Armchair" type="Node2D" parent="."]
+visible = false
 position = Vector2( 593, 540 )
 z_index = 2
 
@@ -392,12 +392,12 @@ texture = ExtResource( 57 )
 [node name="Branches" type="AnimatedSprite" parent="Window/Sky"]
 z_index = 1
 frames = SubResource( 18 )
-frame = 1
 playing = true
 
 [node name="Moon" type="AnimatedSprite" parent="Window/Sky"]
 z_index = 1
 frames = SubResource( 19 )
+frame = 1
 playing = true
 
 [node name="Face" type="Sprite" parent="Window/Sky/Moon"]

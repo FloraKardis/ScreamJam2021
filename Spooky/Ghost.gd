@@ -16,7 +16,7 @@ func _process(delta):
 		pass
 	else:
 		if to_spook.empty():
-			if caught_on > REST:
+			if caught_on > REST and not Global.haunting_in_progress:
 				move(get_global_mouse_position(), delta)
 		else:
 			move(to_spook[0].find_node("Shape").get_global_position(), delta)

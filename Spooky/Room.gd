@@ -10,7 +10,8 @@ func current_object():
 #	if $Froggo.stressed() and not NOT_ALLOWED_AT_FIRST[0] in allowed:
 #		allowed += NOT_ALLOWED_AT_FIRST
 	if currently_selected != null:
-#		if currently_selected in allowed:
+#		if currently_selected in allowed
+		print("returning ", currently_selected)
 		return self.find_node(currently_selected)
 	return null
 

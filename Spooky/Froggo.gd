@@ -3,7 +3,7 @@ extends Node2D
 const REACTIONS = ["surprised", "blanketing", "hiding"]
 #const NOT_VERY_SPOOKY = ["lamp blinking", "picture kiss", "wardrobe spooking", "moon turning"]
 #const VERY_SPOOKY = ["books flying", "armchair levitating"]
-const STRESS_THRESHOLD = 4
+const STRESS_THRESHOLD = 3
 
 var already_happened = []
 var stress_level = 0
@@ -32,7 +32,7 @@ func react():
 
 func _on_reaction_finished():
 	if $AnimatedSprite.animation in REACTIONS:
-		if stress_level < STRESS_THRESHOLD / 2:
+		if stress_level < STRESS_THRESHOLD - 1:
 			$AnimatedSprite.play("idle")
 		elif stress_level < STRESS_THRESHOLD:
 			$AnimatedSprite.play("this is fine")
