@@ -7,7 +7,7 @@ const MIN_DISTANCE_FROM_OBJECT = 200
 const REST = 0.5
 
 var to_spook = []
-var spooking = false
+var spooking = true
 var caught_on = REST + 1
 
 func _process(delta):
