@@ -24,10 +24,15 @@ config/name="Spooky"
 run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://Global.gd"
+
 [display]
 
 window/size/width=1500
 window/size/height=800
+window/size/fullscreen=true
 mouse_cursor/custom_image="res://art/mouse cursor/pointer_64.png"
 window/stretch/mode="2d"
 window/stretch/aspect="keep"

@@ -2,8 +2,8 @@ extends Node2D
 
 class_name Ghost
 
-const SPEED = 300
-const MIN_DISTANCE_FROM_OBJECT = 100
+const SPEED = 200
+const MIN_DISTANCE_FROM_OBJECT = 200
 const REST = 0.5
 
 var to_spook = []

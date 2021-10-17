@@ -1,25 +1,41 @@
 extends Node2D
 
+const REACTIONS = ["surprised", "blanketing", "hiding"]
+#const NOT_VERY_SPOOKY = ["lamp blinking", "picture kiss", "wardrobe spooking", "moon turning"]
+#const VERY_SPOOKY = ["books flying", "armchair levitating"]
+const STRESS_THRESHOLD = 4
+
+var already_happened = []
 var stress_level = 0
 
+#func stressed():
+#	return stress_level >= STRESS_THRESHOLD
+
 func _on_spooking_finished(animation_name):
+	print(animation_name)
+#	if animation_name in NOT_VERY_SPOOKY:
+	if not animation_name in already_happened:
+		already_happened.append(animation_name)
+		stress_level += 1
+#	elif animation_name in VERY_SPOOKY:
+#		stress_level += 2
+	print(stress_level)
 	react()
 
 func react():
-	match stress_level:
-		0:
-			$AnimatedSprite.play("surprised")
-		1:
-			pass
-		2:
-			pass
-
+	if stress_level < STRESS_THRESHOLD:
+		$AnimatedSprite.play("surprised")
+	elif stress_level == STRESS_THRESHOLD:
+		$AnimatedSprite.play("blanketing")
+	else:
+		$AnimatedSprite.play("hiding")
 
 func _on_reaction_finished():
-	match stress_level:
-		0:
+	if $AnimatedSprite.animation in REACTIONS:
+		if stress_level < STRESS_THRESHOLD / 2:
 			$AnimatedSprite.play("idle")
-		1:
-			pass
-		2:
-			pass
+		elif stress_level < STRESS_THRESHOLD:
+			$AnimatedSprite.play("this is fine")
+		else:
+			$AnimatedSprite.play("blanketed")
+		Global.haunting_in_progress = false
