@@ -49,11 +49,6 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 10 ) ],
-"loop": false,
-"name": "surprised",
-"speed": 7.0
-}, {
 "frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "this is fine",
@@ -73,6 +68,11 @@ animations = [ {
 "loop": true,
 "name": "hiding",
 "speed": 8.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 10 ) ],
+"loop": false,
+"name": "surprised",
+"speed": 7.0
 } ]
 
 [node name="Froggo" type="Node2D"]
@@ -81,6 +81,5 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "idle"
-frame = 1
 playing = true
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_reaction_finished"]

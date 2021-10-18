@@ -15,8 +15,8 @@ func current_object():
 		return self.find_node(currently_selected)
 	return null
 
-func _on_mouse_entered(object):
-	currently_selected = object
+#func _on_mouse_entered(object):
+#	currently_selected = object
 
 func _on_mouse_exited():
 	currently_selected = null
@@ -39,3 +39,6 @@ func interact(object):
 func frog_clicked():
 	$FrogHeart.set_frame(0)
 	$FrogHeart.play("love")
+
+func _on_TextureButton_button_up(object):
+	currently_selected = object
