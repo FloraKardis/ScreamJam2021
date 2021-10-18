@@ -35,3 +35,7 @@ func interact(object):
 			$SpookPlayer.play("books flying")
 		if object == $Window:
 			$SpookPlayer.play("moon turning")
+
+func frog_clicked():
+	$FrogHeart.set_frame(0)
+	$FrogHeart.play("love")
