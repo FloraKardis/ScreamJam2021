@@ -11,5 +11,5 @@ dest_files=[ "res://.import/spooking.ogg-6a1c7ba1a9d6aecf35db9ed5ab591da2.oggstr
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -33,10 +33,22 @@ tracks/1/keys = {
 "update": 1,
 "values": [ true, false ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("BackgroundMusic:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -80.0, 0.0 ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "fade out"
-length = 1.1
+length = 6.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Node2D/ColorRect:color")
 tracks/0/interp = 1
@@ -44,7 +56,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
@@ -60,6 +72,18 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("BackgroundMusic:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 4.5, 5, 5.7, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -10.0, -40.0, -80.0 ]
 }
 
 [node name="Node2D" type="Node2D"]
@@ -91,4 +115,5 @@ __meta__ = {
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
+volume_db = -80.0
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]

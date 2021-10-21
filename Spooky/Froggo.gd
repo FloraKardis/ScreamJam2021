@@ -25,7 +25,7 @@ func _on_spooking_finished(animation_name):
 func react():
 	if stress_level < STRESS_THRESHOLD:
 		$AnimatedSprite.play("surprised")
-		$SoundLookingAround.play()
+#		$SoundLookingAround.play()
 	elif stress_level == STRESS_THRESHOLD and $AnimatedSprite.animation != "blanketed":
 		$AnimatedSprite.play("blanketing")
 		$SoundHiding.play()

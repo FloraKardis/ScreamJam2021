@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://art/ghost/idle/idle1.png" type="Texture" id=1]
 [ext_resource path="res://Ghost.gd" type="Script" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://art/ghost/spooking/spooking2.png" type="Texture" id=19]
 [ext_resource path="res://art/ghost/spooking/spooking3.png" type="Texture" id=20]
 [ext_resource path="res://art/ghost/spooking/spooking4.png" type="Texture" id=21]
+[ext_resource path="res://music/spooking.ogg" type="AudioStream" id=22]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -47,6 +48,9 @@ script = ExtResource( 2 )
 position = Vector2( 1, 0 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 5
+frame = 1
 playing = true
+
+[node name="HauntingSounds" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 22 )
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_animation_finished"]

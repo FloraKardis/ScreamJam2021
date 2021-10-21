@@ -11,8 +11,9 @@ const SCORING_SYSTEM = {
 
 func _ready():
 	$AnimationPlayer.play("fade in")
-	set_score(SCORING_SYSTEM[Global.points])
-	
+	$BackgroundMusic.play()
+	set_score(SCORING_SYSTEM[Global.points])	
+
 func set_score(score):
 	if score == 0:
 		$Jury/Cards.visible = false

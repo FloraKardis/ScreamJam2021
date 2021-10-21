@@ -33,6 +33,7 @@ func move(position: Vector2, delta):
 			caught_on = 0
 		else:
 			$AnimatedSprite.play("spooking")
+			$HauntingSounds.play()
 			spooking = true
 
 func _animation_finished():

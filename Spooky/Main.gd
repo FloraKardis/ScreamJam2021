@@ -1,6 +1,6 @@
 extends Node2D
 
-var time = 60
+var time = 57
 
 func _ready():
 	Global.haunting_in_progress = false
@@ -21,6 +21,7 @@ func _on_animation_finished(animation_name):
 	if animation_name == "fade in":
 		$Timer.start(time)
 		$Ghost.spooking = false
+
 	if animation_name == "fade out":
 		Global.points = $Room/Froggo.stress_level
 		get_tree().change_scene("res://GameOver.tscn")
