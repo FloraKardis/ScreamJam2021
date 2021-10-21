@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://art/froggo/idle/idle1.png" type="Texture" id=1]
 [ext_resource path="res://Froggo.gd" type="Script" id=2]
@@ -41,6 +41,8 @@
 [ext_resource path="res://art/froggo/hiding/4.png" type="Texture" id=39]
 [ext_resource path="res://art/froggo/hiding/5.png" type="Texture" id=40]
 [ext_resource path="res://art/froggo/hiding/6.png" type="Texture" id=41]
+[ext_resource path="res://music/react.ogg" type="AudioStream" id=42]
+[ext_resource path="res://music/hiding.ogg" type="AudioStream" id=43]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -48,6 +50,16 @@ animations = [ {
 "loop": true,
 "name": "idle",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 37 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 39 ), ExtResource( 39 ), ExtResource( 39 ), ExtResource( 39 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 35 ), ExtResource( 35 ), ExtResource( 35 ), ExtResource( 35 ), ExtResource( 35 ), ExtResource( 35 ), ExtResource( 31 ), ExtResource( 33 ), ExtResource( 33 ), ExtResource( 33 ), ExtResource( 33 ), ExtResource( 33 ), ExtResource( 33 ), ExtResource( 32 ), ExtResource( 34 ) ],
+"loop": true,
+"name": "hiding",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 10 ) ],
+"loop": false,
+"name": "surprised",
+"speed": 7.0
 }, {
 "frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 12 ) ],
 "loop": true,
@@ -63,16 +75,6 @@ animations = [ {
 "loop": true,
 "name": "blanketed",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 37 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 39 ), ExtResource( 39 ), ExtResource( 39 ), ExtResource( 39 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 35 ), ExtResource( 35 ), ExtResource( 35 ), ExtResource( 35 ), ExtResource( 35 ), ExtResource( 35 ), ExtResource( 31 ), ExtResource( 33 ), ExtResource( 33 ), ExtResource( 33 ), ExtResource( 33 ), ExtResource( 33 ), ExtResource( 33 ), ExtResource( 32 ), ExtResource( 34 ) ],
-"loop": true,
-"name": "hiding",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 10 ) ],
-"loop": false,
-"name": "surprised",
-"speed": 7.0
 } ]
 
 [node name="Froggo" type="Node2D"]
@@ -81,5 +83,12 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "idle"
+frame = 4
 playing = true
+
+[node name="SoundHiding" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 43 )
+
+[node name="SoundLookingAround" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 42 )
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_reaction_finished"]

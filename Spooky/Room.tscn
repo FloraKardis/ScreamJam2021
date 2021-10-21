@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=2]
+[gd_scene load_steps=97 format=2]
 
 [ext_resource path="res://art/room/background.png" type="Texture" id=1]
 [ext_resource path="res://Room.gd" type="Script" id=2]
@@ -74,8 +74,13 @@
 [ext_resource path="res://art/outside/moon/face/turn around/5.png" type="Texture" id=72]
 [ext_resource path="res://art/outside/moon/face/turn around/10.png" type="Texture" id=73]
 [ext_resource path="res://art/room/bookshelf/frog_heart3.png" type="Texture" id=74]
+[ext_resource path="res://music/moon.ogg" type="AudioStream" id=75]
+[ext_resource path="res://music/scarf.ogg" type="AudioStream" id=76]
+[ext_resource path="res://music/bookshelf.ogg" type="AudioStream" id=77]
+[ext_resource path="res://music/kiss.ogg" type="AudioStream" id=78]
+[ext_resource path="res://music/lights-off.ogg" type="AudioStream" id=79]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
@@ -83,7 +88,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
@@ -91,10 +96,10 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 92.0264, 91.8932 )
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=4]
 resource_name = "books flying"
 length = 3.0
 tracks/0/type = "value"
@@ -122,7 +127,7 @@ tracks/1/keys = {
 "values": [ 2, 0 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=5]
 length = 2.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Ghosts:visible")
@@ -149,7 +154,7 @@ tracks/1/keys = {
 "values": [ ExtResource( 20 ), ExtResource( 22 ), ExtResource( 20 ), ExtResource( 22 ), ExtResource( 20 ), ExtResource( 22 ), ExtResource( 20 ), ExtResource( 22 ), ExtResource( 22 ), ExtResource( 20 ), ExtResource( 20 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=6]
 resource_name = "moon turning"
 length = 3.0
 tracks/0/type = "value"
@@ -165,7 +170,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 58 ), ExtResource( 64 ), ExtResource( 71 ), ExtResource( 66 ), ExtResource( 72 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 73 ), ExtResource( 70 ), ExtResource( 69 ), ExtResource( 68 ), ExtResource( 67 ), ExtResource( 72 ), ExtResource( 66 ), ExtResource( 71 ), ExtResource( 64 ), ExtResource( 58 ) ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=7]
 length = 1.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Picture:animation")
@@ -180,7 +185,7 @@ tracks/0/keys = {
 "values": [ "kiss", "default" ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=8]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Wardrobe/Scarf:texture")
@@ -207,10 +212,10 @@ tracks/1/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 170, 300.294 )
 
-[sub_resource type="SpriteFrames" id=13]
+[sub_resource type="SpriteFrames" id=10]
 animations = [ {
 "frames": [ ExtResource( 30 ) ],
 "loop": true,
@@ -223,10 +228,10 @@ animations = [ {
 "speed": 8.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=14]
+[sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 88, 102 )
 
-[sub_resource type="SpriteFrames" id=15]
+[sub_resource type="SpriteFrames" id=12]
 animations = [ {
 "frames": [ ExtResource( 56 ) ],
 "loop": true,
@@ -239,10 +244,10 @@ animations = [ {
 "speed": 7.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=16]
+[sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 156, 172 )
 
-[sub_resource type="SpriteFrames" id=18]
+[sub_resource type="SpriteFrames" id=14]
 animations = [ {
 "frames": [ ExtResource( 59 ), ExtResource( 61 ), ExtResource( 62 ) ],
 "loop": true,
@@ -250,7 +255,7 @@ animations = [ {
 "speed": 1.5
 } ]
 
-[sub_resource type="SpriteFrames" id=19]
+[sub_resource type="SpriteFrames" id=15]
 animations = [ {
 "frames": [ ExtResource( 60 ), ExtResource( 63 ) ],
 "loop": true,
@@ -258,10 +263,10 @@ animations = [ {
 "speed": 0.75
 } ]
 
-[sub_resource type="RectangleShape2D" id=20]
+[sub_resource type="RectangleShape2D" id=16]
 extents = Vector2( 122, 247 )
 
-[sub_resource type="SpriteFrames" id=21]
+[sub_resource type="SpriteFrames" id=17]
 animations = [ {
 "frames": [  ],
 "loop": true,
@@ -280,14 +285,14 @@ script = ExtResource( 2 )
 [node name="Background" type="AnimatedSprite" parent="."]
 light_mask = -2147483647
 z_index = -50
-frames = SubResource( 2 )
+frames = SubResource( 1 )
 playing = true
 centered = false
 
 [node name="Lamp" type="AnimatedSprite" parent="."]
 position = Vector2( 750, 88 )
 z_index = 2
-frames = SubResource( 3 )
+frames = SubResource( 2 )
 
 [node name="Area" type="Area2D" parent="Lamp"]
 z_index = 50
@@ -296,7 +301,7 @@ z_index = 50
 visible = false
 position = Vector2( 1.33484, 0 )
 z_index = 50
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="TextureButton" type="TextureButton" parent="Lamp/Area"]
 margin_left = -79.0
@@ -307,12 +312,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="SoundEffect" type="AudioStreamPlayer" parent="Lamp"]
+stream = ExtResource( 79 )
+
 [node name="SpookPlayer" type="AnimationPlayer" parent="."]
-"anims/books flying" = SubResource( 7 )
-"anims/lamp blinking" = SubResource( 8 )
-"anims/moon turning" = SubResource( 9 )
-"anims/picture kiss" = SubResource( 10 )
-"anims/wardrobe spooking" = SubResource( 11 )
+"anims/books flying" = SubResource( 4 )
+"anims/lamp blinking" = SubResource( 5 )
+"anims/moon turning" = SubResource( 6 )
+"anims/picture kiss" = SubResource( 7 )
+"anims/wardrobe spooking" = SubResource( 8 )
 
 [node name="Wardrobe" type="Sprite" parent="."]
 position = Vector2( 221, 363 )
@@ -325,7 +333,7 @@ z_index = 50
 [node name="Shape" type="CollisionShape2D" parent="Wardrobe/Area"]
 visible = false
 position = Vector2( -538, -37.418 )
-shape = SubResource( 12 )
+shape = SubResource( 9 )
 
 [node name="TextureButton" type="TextureButton" parent="Wardrobe/Area"]
 margin_left = -694.0
@@ -342,6 +350,9 @@ position = Vector2( 531.918, 34.341 )
 z_index = 3
 texture = ExtResource( 14 )
 
+[node name="SoundEffect" type="AudioStreamPlayer" parent="Wardrobe"]
+stream = ExtResource( 76 )
+
 [node name="Froggo" parent="." instance=ExtResource( 9 )]
 position = Vector2( 593, 540 )
 z_index = 2
@@ -354,7 +365,7 @@ texture = ExtResource( 23 )
 [node name="Picture" type="AnimatedSprite" parent="."]
 position = Vector2( 804, 511 )
 z_index = 2
-frames = SubResource( 13 )
+frames = SubResource( 10 )
 playing = true
 
 [node name="Area" type="Area2D" parent="Picture"]
@@ -363,7 +374,7 @@ z_index = 50
 [node name="Shape" type="CollisionShape2D" parent="Picture/Area"]
 visible = false
 position = Vector2( 173, 5 )
-shape = SubResource( 14 )
+shape = SubResource( 11 )
 
 [node name="TextureButton" type="TextureButton" parent="Picture/Area"]
 margin_left = 97.0
@@ -374,8 +385,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="SoundEffect" type="AudioStreamPlayer" parent="Picture"]
+stream = ExtResource( 78 )
+
 [node name="Books" type="AnimatedSprite" parent="."]
-frames = SubResource( 15 )
+frames = SubResource( 12 )
 playing = true
 centered = false
 
@@ -385,7 +399,7 @@ z_index = 50
 [node name="Shape" type="CollisionShape2D" parent="Books/Area"]
 visible = false
 position = Vector2( 1000, 229 )
-shape = SubResource( 16 )
+shape = SubResource( 13 )
 
 [node name="TextureButton" type="TextureButton" parent="Books/Area"]
 margin_left = 845.0
@@ -395,6 +409,9 @@ margin_bottom = 403.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="SoundEffect" type="AudioStreamPlayer" parent="Books"]
+stream = ExtResource( 77 )
 
 [node name="Bookshelf" type="Sprite" parent="."]
 z_index = -1
@@ -410,13 +427,13 @@ texture = ExtResource( 57 )
 
 [node name="Branches" type="AnimatedSprite" parent="Window/Sky"]
 z_index = 1
-frames = SubResource( 18 )
+frames = SubResource( 14 )
+frame = 1
 playing = true
 
 [node name="Moon" type="AnimatedSprite" parent="Window/Sky"]
 z_index = 1
-frames = SubResource( 19 )
-frame = 1
+frames = SubResource( 15 )
 playing = true
 
 [node name="Face" type="Sprite" parent="Window/Sky/Moon"]
@@ -429,7 +446,7 @@ z_index = 50
 
 [node name="Shape" type="CollisionShape2D" parent="Window/Area"]
 visible = false
-shape = SubResource( 20 )
+shape = SubResource( 16 )
 
 [node name="TextureButton" type="TextureButton" parent="Window/Area"]
 margin_left = -100.0
@@ -439,6 +456,9 @@ margin_bottom = 239.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="SoundEffect" type="AudioStreamPlayer" parent="Window"]
+stream = ExtResource( 75 )
 
 [node name="Ghosts" type="Sprite" parent="."]
 visible = false
@@ -453,7 +473,7 @@ texture = ExtResource( 20 )
 centered = false
 
 [node name="FrogHeart" type="AnimatedSprite" parent="."]
-frames = SubResource( 21 )
+frames = SubResource( 17 )
 playing = true
 centered = false
 

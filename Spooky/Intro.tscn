@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Intro.gd" type="Script" id=1]
 [ext_resource path="res://art/jury/get_spookin1.png" type="Texture" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://art/jury/instructions1.png" type="Texture" id=7]
 [ext_resource path="res://art/jury/instructions2.png" type="Texture" id=8]
 [ext_resource path="res://art/jury/jury2.png" type="Texture" id=9]
+[ext_resource path="res://music/menu.ogg" type="AudioStream" id=10]
+[ext_resource path="res://music/play_button.ogg" type="AudioStream" id=11]
 
 [sub_resource type="Animation" id=1]
 resource_name = "fade in"
@@ -99,6 +101,7 @@ script = ExtResource( 1 )
 [node name="Instructions" type="AnimatedSprite" parent="."]
 z_index = 1
 frames = SubResource( 3 )
+frame = 1
 speed_scale = 0.9
 playing = true
 centered = false
@@ -114,6 +117,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ClickSound" type="AudioStreamPlayer" parent="TextureButton"]
+stream = ExtResource( 11 )
+
 [node name="Node2D" type="Node2D" parent="."]
 z_index = 50
 
@@ -127,8 +133,12 @@ __meta__ = {
 [node name="Jury" type="AnimatedSprite" parent="."]
 z_index = -1
 frames = SubResource( 5 )
-frame = 1
+frame = 3
 playing = true
 centered = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = -10.0
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]
 [connection signal="button_up" from="TextureButton" to="." method="get_spookin"]

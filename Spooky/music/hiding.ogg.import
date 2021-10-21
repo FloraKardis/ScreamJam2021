@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/hiding.ogg-7a39d73be138e7fb7be95b9f3a910a44.oggstr"
+
+[deps]
+
+source_file="res://music/hiding.ogg"
+dest_files=[ "res://.import/hiding.ogg-7a39d73be138e7fb7be95b9f3a910a44.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

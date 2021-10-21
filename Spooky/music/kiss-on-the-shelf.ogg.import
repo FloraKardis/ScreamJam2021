@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/kiss-on-the-shelf.ogg-a9ce9589cf5fb4b48d1358feb67eb789.oggstr"
+
+[deps]
+
+source_file="res://music/kiss-on-the-shelf.ogg"
+dest_files=[ "res://.import/kiss-on-the-shelf.ogg-a9ce9589cf5fb4b48d1358feb67eb789.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

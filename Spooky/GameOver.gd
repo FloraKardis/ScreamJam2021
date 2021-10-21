@@ -31,6 +31,7 @@ func set_score(score):
 				scores[i] = possible_individual_scores[randi() % possible_individual_scores.size()]
 		for i in range(scores.size()):
 			set_texture(i, scores[i])
+		$Applause.play()
 
 func set_texture(index, score):
 	find_node("Card" + str(index + 1)).play(str(score))
@@ -38,6 +39,7 @@ func set_texture(index, score):
 
 func try_again():
 	$AnimationPlayer.play("fade out")
+	$TextureButton/ClickSound.play()
 
 func _on_animation_finished(animation_name):
 	if animation_name == "fade out":

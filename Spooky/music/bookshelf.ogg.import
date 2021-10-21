@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bookshelf.ogg-2f6e560830e8f7764e9736732fe94942.oggstr"
+
+[deps]
+
+source_file="res://music/bookshelf.ogg"
+dest_files=[ "res://.import/bookshelf.ogg-2f6e560830e8f7764e9736732fe94942.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

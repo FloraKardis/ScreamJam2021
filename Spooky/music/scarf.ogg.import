@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/scarf.ogg-88044c7d2edb727a870adea8cf7abd5e.oggstr"
+
+[deps]
+
+source_file="res://music/scarf.ogg"
+dest_files=[ "res://.import/scarf.ogg-88044c7d2edb727a870adea8cf7abd5e.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

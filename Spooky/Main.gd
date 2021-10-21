@@ -5,6 +5,7 @@ var time = 60
 func _ready():
 	Global.haunting_in_progress = false
 	$AnimationPlayer.play("fade in")
+	$BackgroundMusic.play()
 
 func _process(delta):
 	if $Timer.finished:
