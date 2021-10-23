@@ -86,7 +86,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.5, 1.5 ),
+"times": PoolRealArray( 0, 1, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ -10.0, -20.0, -50.0 ]
@@ -168,7 +168,7 @@ __meta__ = {
 [node name="Jury" type="AnimatedSprite" parent="."]
 z_index = -1
 frames = SubResource( 5 )
-frame = 1
+frame = 3
 playing = true
 centered = false
 

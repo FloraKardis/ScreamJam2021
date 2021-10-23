@@ -50,7 +50,6 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "fade in"
-length = 1.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Node2D/ColorRect:color")
 tracks/0/interp = 1
@@ -58,7 +57,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1.5 ),
+"times": PoolRealArray( 0, 0.5, 1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
@@ -70,7 +69,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1.5 ),
+"times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
@@ -82,7 +81,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 1.5 ),
+"times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ -80.0, -10.0 ]
@@ -90,7 +89,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id=2]
 resource_name = "fade out"
-length = 2.0
+length = 1.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Node2D/ColorRect:color")
 tracks/0/interp = 1
@@ -122,7 +121,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.5, 1.5 ),
+"times": PoolRealArray( 0, 1, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ -10.0, -20.0, -80.0 ]
@@ -158,6 +157,11 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
+"frames": [ ExtResource( 10 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "7",
+"speed": 1.0
+}, {
 "frames": [ ExtResource( 16 ), ExtResource( 14 ) ],
 "loop": true,
 "name": "10",
@@ -177,15 +181,15 @@ animations = [ {
 "loop": true,
 "name": "8",
 "speed": 1.0
-}, {
-"frames": [ ExtResource( 10 ), ExtResource( 13 ) ],
-"loop": true,
-"name": "7",
-"speed": 1.0
 } ]
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
+"frames": [ ExtResource( 24 ), ExtResource( 28 ) ],
+"loop": true,
+"name": "7",
+"speed": 1.0
+}, {
 "frames": [ ExtResource( 21 ), ExtResource( 31 ) ],
 "loop": true,
 "name": "10",
@@ -205,15 +209,15 @@ animations = [ {
 "loop": true,
 "name": "8",
 "speed": 1.0
-}, {
-"frames": [ ExtResource( 24 ), ExtResource( 28 ) ],
-"loop": true,
-"name": "7",
-"speed": 1.0
 } ]
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
+"frames": [ ExtResource( 36 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "7",
+"speed": 1.0
+}, {
 "frames": [ ExtResource( 34 ), ExtResource( 38 ) ],
 "loop": true,
 "name": "10",
@@ -232,11 +236,6 @@ animations = [ {
 "frames": [ ExtResource( 26 ), ExtResource( 29 ) ],
 "loop": true,
 "name": "8",
-"speed": 1.0
-}, {
-"frames": [ ExtResource( 36 ), ExtResource( 19 ) ],
-"loop": true,
-"name": "7",
 "speed": 1.0
 } ]
 
@@ -312,7 +311,7 @@ z_index = 100
 [node name="ColorRect" type="ColorRect" parent="Node2D"]
 margin_right = 1500.0
 margin_bottom = 800.0
-color = Color( 1, 1, 1, 0 )
+color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -320,12 +319,12 @@ __meta__ = {
 [node name="Congratulations" type="AnimatedSprite" parent="."]
 visible = false
 frames = SubResource( 8 )
+frame = 1
 playing = true
 centered = false
 
 [node name="Encouragement" type="AnimatedSprite" parent="."]
 frames = SubResource( 9 )
-frame = 1
 playing = true
 centered = false
 
@@ -347,6 +346,6 @@ stream = ExtResource( 46 )
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 47 )
-volume_db = -10.0
+volume_db = -80.0
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]
 [connection signal="button_up" from="TextureButton" to="." method="try_again"]

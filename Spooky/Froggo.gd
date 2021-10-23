@@ -28,10 +28,10 @@ func react():
 #		$SoundLookingAround.play()
 	elif stress_level == STRESS_THRESHOLD and $AnimatedSprite.animation != "blanketed":
 		$AnimatedSprite.play("blanketing")
-		$SoundHiding.play()
+		$SoundBlanketing.play()
 	else:
 		$AnimatedSprite.play("hiding")
-		$SoundLookingAround.play()
+		$SoundHiding.play()
 
 func _on_reaction_finished():
 	if $AnimatedSprite.animation in REACTIONS:
