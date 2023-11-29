@@ -169,7 +169,7 @@ __meta__ = {
 [node name="Jury" type="AnimatedSprite" parent="."]
 z_index = -1
 frames = SubResource( 5 )
-frame = 2
+frame = 1
 playing = true
 centered = false
 
