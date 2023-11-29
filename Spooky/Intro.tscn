@@ -159,6 +159,7 @@ stream = ExtResource( 11 )
 z_index = 50
 
 [node name="ColorRect" type="ColorRect" parent="Node2D"]
+visible = false
 margin_right = 1500.0
 margin_bottom = 800.0
 __meta__ = {
@@ -168,7 +169,7 @@ __meta__ = {
 [node name="Jury" type="AnimatedSprite" parent="."]
 z_index = -1
 frames = SubResource( 5 )
-frame = 3
+frame = 2
 playing = true
 centered = false
 

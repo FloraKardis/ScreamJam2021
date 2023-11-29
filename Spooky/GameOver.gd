@@ -10,6 +10,7 @@ const SCORING_SYSTEM = {
 }
 
 func _ready():
+	$Node2D/ColorRect.visible = true
 	$AnimationPlayer.play("fade in")
 	$BackgroundMusic.play()
 	set_score(SCORING_SYSTEM[Global.points])	
@@ -36,7 +37,6 @@ func set_score(score):
 
 func set_texture(index, score):
 	find_node("Card" + str(index + 1)).play(str(score))
-#	set_Texture("res:/art/jury/scores/" + str(index) + str(score) + ".png")
 
 func try_again():
 	$AnimationPlayer.play("fade out")

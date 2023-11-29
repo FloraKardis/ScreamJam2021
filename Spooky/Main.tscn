@@ -107,6 +107,7 @@ z_index = 50
 z_index = 100
 
 [node name="ColorRect" type="ColorRect" parent="Node2D"]
+visible = false
 margin_right = 1500.0
 margin_bottom = 800.0
 __meta__ = {

@@ -1,22 +1,10 @@
 extends Node2D
 
-#const ALLOWED_AT_FIRST = ["Lamp", "Wardrobe", "Picture", "Window"]
-#const NOT_ALLOWED_AT_FIRST = ["Books", "Armchair"]
 
-#var allowed = ALLOWED_AT_FIRST
 var currently_selected = null
 
 func current_object():
-#	if $Froggo.stressed() and not NOT_ALLOWED_AT_FIRST[0] in allowed:
-#		allowed += NOT_ALLOWED_AT_FIRST
-	if currently_selected != null:
-#		if currently_selected in allowed
-		print("returning ", currently_selected)
-		return self.find_node(currently_selected)
-	return null
-
-#func _on_mouse_entered(object):
-#	currently_selected = object
+	return currently_selected
 
 func _on_mouse_exited():
 	currently_selected = null
@@ -41,5 +29,5 @@ func frog_clicked():
 	$FrogHeart.set_frame(0)
 	$FrogHeart.play("love")
 
-func _on_TextureButton_button_up(object):
-	currently_selected = object
+func _on_TextureButton_button_up(object_name):
+	currently_selected = self.find_node(object_name)

@@ -430,13 +430,12 @@ texture = ExtResource( 57 )
 [node name="Branches" type="AnimatedSprite" parent="Window/Sky"]
 z_index = 1
 frames = SubResource( 14 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="Moon" type="AnimatedSprite" parent="Window/Sky"]
 z_index = 1
 frames = SubResource( 15 )
-frame = 1
 playing = true
 
 [node name="Face" type="Sprite" parent="Window/Sky/Moon"]
